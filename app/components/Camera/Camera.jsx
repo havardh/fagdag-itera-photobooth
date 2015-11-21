@@ -14,6 +14,8 @@ function getCameraState() {
   };
 }
 
+const streamPath = 'http://188.166.108.167:8091/?action=stream';
+
 export default class Camera extends React.Component {
 
   state = getCameraState();
@@ -37,6 +39,7 @@ export default class Camera extends React.Component {
   renderCamera() {
     return (
       <div>
+         <img src={streamPath} />
          <button onClick={takePicture}>Take picture</button>
       </div>
     );
@@ -45,7 +48,7 @@ export default class Camera extends React.Component {
   renderSaveOrDelete() {
     return (
       <div>
-        <img src={this.state.path}></img>
+        <img src={this.state.path} />
         <button onClick={() => savePicture(this.state.path)}>Save picture</button>
         <button onClick={() => deletePicture(this.state.path)}>Delete picture</button>
       </div>
