@@ -1,16 +1,14 @@
 import React from 'react';
 
-export default class Camera extends React.Component {
+import {takePicture} from '../../actions/CameraActions';
 
-  takePicture() {
-    console.log('flash');
-  }
+export default class Camera extends React.Component {
 
   render() {
     return (
       <div>
-         <img src=""></img>
-         <button onClick={this.takePicture}>
+         <img src="picture.jpg"></img>
+         <button onClick={takePicture}>
             Take picture
         </button>
       </div>
