@@ -1,0 +1,32 @@
+img.preview {
+  width: 100%
+}
+
+button {
+  height: 100px;
+  width: 100px;
+  border-radius: 100px;
+  border: 1px solid #000;
+}
+
+button.take {
+  background-color: light-gray;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: 10%;
+}
+
+button.save {
+  background-color: green;
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+}
+
+button.del {
+  background-color: red;
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+}

@@ -1,3 +1,5 @@
+import styles from './_Camera.scss';
+
 import React from 'react';
 
 import CameraStore from '../../stores/CameraStore';
@@ -39,8 +41,8 @@ export default class Camera extends React.Component {
   renderCamera() {
     return (
       <div>
-         <img src={streamPath} />
-         <button onClick={takePicture}>Take picture</button>
+         <img className={styles.preview} src={streamPath} />
+         <button className={styles.take} onClick={takePicture}>Take</button>
       </div>
     );
   }
@@ -48,9 +50,9 @@ export default class Camera extends React.Component {
   renderSaveOrDelete() {
     return (
       <div>
-        <img src={this.state.path} />
-        <button onClick={() => savePicture(this.state.path)}>Save picture</button>
-        <button onClick={() => deletePicture(this.state.path)}>Delete picture</button>
+        <img className={styles.preview} src={this.state.path} />
+        <button className={styles.save} onClick={() => savePicture(this.state.path)}>Save</button>
+        <button className={styles.del} onClick={() => deletePicture(this.state.path)}>Delete</button>
       </div>
     );
   }
