@@ -4,6 +4,8 @@ import React from 'react';
 import AppActions from '../../actions/AppActions';
 import ItemsStore from '../../stores/ItemsStore';
 
+import Camera from '../Camera/Camera';
+
 /*
 function getAppState() {
   return {
@@ -32,6 +34,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div className={styles.app}>
+        <Camera />
       </div>
     );
   }
