@@ -3,7 +3,9 @@ import AppDispatcher from '../dispatcher/AppDispatcher';
 
 import {
   PICTURE_UPDATED,
-  PICTURE_TAKEN
+  PICTURE_TAKEN,
+  PICTURE_SAVED,
+  PICTURE_DELETED
 } from '../constants/CameraConstants';
 
 class CameraStore extends BaseStore {
@@ -32,6 +34,16 @@ AppDispatcher.register(action => {
   switch (action.actionType) {
   case PICTURE_TAKEN:
     store.path = action.data.path;
+    store.emitChange();
+    break;
+
+  case PICTURE_SAVED:
+    store.path = '';
+    store.emitChange();
+    break;
+
+  case PICTURE_DELETED:
+    store.path = '';
     store.emitChange();
     break;
   }

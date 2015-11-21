@@ -31,7 +31,7 @@ function request(options) {
       .set('Accept', 'application/json')
       .endAsync()
       .then(response => {
-        resolve(JSON.parse(response.text));
+        resolve(JSON.parse(response.text || '{}'));
       })
       .catch(error => {
         reject(error);
@@ -44,6 +44,22 @@ export default {
   takePicture () {
     return request({
       url: 'camera/takePicture'
+    }).catch(error => {
+      console.log(error);
+    });
+  },
+
+  savePicture () {
+    return request({
+      url: 'camera/savePicture'
+    }).catch(error => {
+      console.log(error);
+    });
+  },
+
+  deletePicture () {
+    return request({
+      url: 'camera/deletePicture'
     }).catch(error => {
       console.log(error);
     });

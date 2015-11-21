@@ -1,8 +1,12 @@
 import React from 'react';
 
-import {takePicture} from '../../actions/CameraActions';
 import CameraStore from '../../stores/CameraStore';
 
+import {
+  takePicture,
+  savePicture,
+  deletePicture
+} from '../../actions/CameraActions';
 
 function getCameraState() {
   return {
@@ -27,13 +31,13 @@ export default class Camera extends React.Component {
   }
 
   render() {
-    console.log(this.state.path);
     return (
       <div>
          <img src={this.state.path}></img>
          <button onClick={takePicture}>Take picture</button>
+         <button onClick={savePicture}>Save picture</button>
+         <button onClick={deletePicture}>Delete picture</button>
       </div>
     );
   }
-
 }
