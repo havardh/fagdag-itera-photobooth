@@ -31,7 +31,7 @@ function request(options) {
       .set('Accept', 'application/json')
       .endAsync()
       .then(response => {
-        resolve(response.body);
+        resolve(JSON.parse(response.text));
       })
       .catch(error => {
         reject(error);

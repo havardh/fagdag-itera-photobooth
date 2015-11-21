@@ -1,0 +1,2 @@
+export const PICTURE_UPDATED = 'PICTURE_UPDATED';
+export const PICTURE_TAKEN = 'PICTURE_TAKEN';
