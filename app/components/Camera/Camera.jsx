@@ -30,13 +30,17 @@ export default class Camera extends React.Component {
     this.setState(getCameraState());
   }
 
+  hasPicture() {
+    return !!this.state.path;
+  }
+
   render() {
     return (
       <div>
          <img src={this.state.path}></img>
-         <button onClick={takePicture}>Take picture</button>
-         <button onClick={savePicture}>Save picture</button>
-         <button onClick={deletePicture}>Delete picture</button>
+         {!this.hasPicture() ? <button onClick={takePicture}>Take picture</button> : false }
+         {this.hasPicture() ? <button onClick={savePicture}>Save picture</button> : false }
+         {this.hasPicture() ? <button onClick={deletePicture}>Delete picture</button> : false}
       </div>
     );
   }
