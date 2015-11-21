@@ -39,8 +39,8 @@ export default class Camera extends React.Component {
       <div>
          <img src={this.state.path}></img>
          {!this.hasPicture() ? <button onClick={takePicture}>Take picture</button> : false }
-         {this.hasPicture() ? <button onClick={savePicture}>Save picture</button> : false }
-         {this.hasPicture() ? <button onClick={deletePicture}>Delete picture</button> : false}
+         {this.hasPicture() ? <button onClick={() => savePicture(this.state.path)}>Save picture</button> : false }
+         {this.hasPicture() ? <button onClick={() => deletePicture(this.state.path)}>Delete picture</button> : false}
       </div>
     );
   }

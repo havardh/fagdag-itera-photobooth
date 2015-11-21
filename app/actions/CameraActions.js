@@ -22,8 +22,8 @@ export default {
       });
   },
 
-  savePicture() {
-    CameraService.savePicture()
+  savePicture(file) {
+    CameraService.savePicture(file)
       .then(data => {
         AppDispatcher.dispatch({
           actionType: PICTURE_SAVED,
@@ -32,8 +32,8 @@ export default {
       });
   },
 
-  deletePicture() {
-    CameraService.deletePicture()
+  deletePicture(file) {
+    CameraService.deletePicture(file)
       .then(data => {
         AppDispatcher.dispatch({
           actionType: PICTURE_DELETED,

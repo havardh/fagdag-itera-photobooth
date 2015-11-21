@@ -43,23 +43,26 @@ export default {
 
   takePicture () {
     return request({
-      url: 'camera/takePicture'
+      url: 'picture',
+      method: Method.GET
     }).catch(error => {
       console.log(error);
     });
   },
 
-  savePicture () {
+  savePicture (file) {
     return request({
-      url: 'camera/savePicture'
+      url: 'picture/' + file,
+      method: Method.PUT
     }).catch(error => {
       console.log(error);
     });
   },
 
-  deletePicture () {
+  deletePicture (file) {
     return request({
-      url: 'camera/deletePicture'
+      url: 'picture/' + file,
+      method: Method.DELETE
     }).catch(error => {
       console.log(error);
     });
